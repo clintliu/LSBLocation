@@ -1,0 +1,20 @@
+{
+  "name": "react-native-lsblocation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clintliu/rean-native-lsblocation.git"
+  },
+  "keywords": [],
+  "author": "Clint <liusbin@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clintliu/rean-native-lsblocation/issues"
+  },
+  "homepage": "https://github.com/clintliu/rean-native-lsblocation#readme"
+}
