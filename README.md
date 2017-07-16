@@ -61,7 +61,7 @@ DeviceEventEmitter.addListener('updateLocation', function(e: Event) {
   }
   
   ${data.coords.latitude}:${data.coords.longitude}`);
-  successCallback(data);
+  
 }.bind(this));
 
 
@@ -70,7 +70,7 @@ MyLocation.getCurrentLocation();
 ```
 
 
-** You also could mix geolocation for handling ios devices.
+** You also could mix geolocation for handling ios devices.**
 
 ```
 getLocation(successCallback,errorCallback,options){
