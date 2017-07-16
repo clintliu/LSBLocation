@@ -50,18 +50,18 @@ public class LSBLocationModule extends ReactContextBaseJavaModule implements Loc
 
     }
     private void locationServiceInitial() {
-        lms = (LocationManager) mReactContext.getSystemService(mReactContext.LOCATION_SERVICE); //取得系統定位服務
+        lms = (LocationManager) mReactContext.getSystemService(mReactContext.LOCATION_SERVICE); //Get location service
         //做法一,由程式判斷用GPS_provider
         if (lms.isProviderEnabled(LocationManager.GPS_PROVIDER) ) {
-            location = lms.getLastKnownLocation(LocationManager.GPS_PROVIDER);  //使用GPS定位座標
+            location = lms.getLastKnownLocation(LocationManager.GPS_PROVIDER);  //use gps
         }
         else if ( lms.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
-            location = lms.getLastKnownLocation(LocationManager.NETWORK_PROVIDER); //使用GPS定位座標
+            location = lms.getLastKnownLocation(LocationManager.NETWORK_PROVIDER); //use network
         }
         else {
             // determin the best location manager by criteria
-            Criteria criteria = new Criteria();  //資訊提供者選取標準
-            bestProvider = lms.getBestProvider(criteria, true);    //選擇精準度最高的提供者
+            Criteria criteria = new Criteria();
+            bestProvider = lms.getBestProvider(criteria, true);
             location = lms.getLastKnownLocation(bestProvider);
 
         }
@@ -73,8 +73,8 @@ public class LSBLocationModule extends ReactContextBaseJavaModule implements Loc
 
     private void getLocation(Location location) {
         if(location != null) {
-            double Longitude = location.getLongitude();   //取得經度
-            double Latitude = location.getLatitude();     //取得緯度
+            double Longitude = location.getLongitude();   //get longitude
+            double Latitude = location.getLatitude();     //get latitude
 
 
             Log.i(TAG, "LSBLocationModule::Got new location. Lng: " +Longitude+" Lat: "+Latitude);
@@ -141,7 +141,7 @@ public class LSBLocationModule extends ReactContextBaseJavaModule implements Loc
 
 
     @Override
-    public void onLocationChanged(Location location) {  //當地點改變時
+    public void onLocationChanged(Location location) {
 
         getLocation(location);
     }
